@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rebil Login</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="styles.css" rel="stylesheet">
+
+    <style>
+        /* Full Page Layout */
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #007bff, #00c6ff); /* Blue Gradient */
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Left Side - Login Form */
+        .login-form {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .login-form h3 {
+            color: #007bff;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .login-form p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            background: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+        }
+
+        /* Social Media Login */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            font-size: 18px;
+            color: white;
+            background: #007bff;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #0056b3;
+        }
+
+        /* Right Side - Image & Content */
+        .login-media {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .login-media img {
+            max-width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .crm-info {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .login-media {
+                display: none; /* Hide image on small screens */
+            }
+        }
+        .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-btn {
+    font-size: 18px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.2s;
+    text-decoration: none;
+}
+
+/* Facebook */
+.facebook {
+    background: #1877f2;
+}
+
+.facebook:hover {
+    background: #0d65d9;
+    transform: scale(1.1);
+}
+
+/* Google */
+.google {
+    background: #db4437;
+}
+
+.google:hover {
+    background: #b83224;
+    transform: scale(1.1);
+}
+
+/* LinkedIn */
+.linkedin {
+    background: #0077b5;
+}
+
+.linkedin:hover {
+    background: #005582;
+    transform: scale(1.1);
+}
+
+/* Twitter */
+.twitter {
+    background: #1da1f2;
+}
+
+.twitter:hover {
+    background: #0c85d0;
+    transform: scale(1.1);
+}
+
+/* Small Checkbox */
+.custom-checkbox {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    margin-top: 1px; /* Adjusts checkbox alignment */
+}
+
+/* Ensure label text is aligned properly */
+.form-check-label {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap; /* Prevents text from breaking into a new line */
+}
+
+/* Space between checkbox and text */
+.me-2 {
+    margin-right: 8px;
+}
+
+/* Prevent wrapping */
+.flex-nowrap {
+    flex-wrap: nowrap !important;
+}
+
+/* Align checkbox and text perfectly */
+.d-flex.align-items-center {
+    align-items: center !important;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Left Side: Login Form -->
+        <div class="login-form">
+            <h3>Sign In</h3>
+            <p>Sign in to your account to start using Rebil Recruit</p>
+            
+            <form action="login.php" method="POST">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+            
+                <!-- Role Selection Dropdown -->
+                  
+            
+                <!-- Remember Me & Forgot Password Section -->
+                <div class="d-flex justify-content-between align-items-center mt-3 flex-nowrap">
+                    <div class="d-flex align-items-center">
+                        <input type="checkbox" name="rememberMe" class="custom-checkbox me-2" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember my preference</label>
+                    </div>
+                    <a href="/RebilFrontend/forget.html" class="btn-link text-primary">Forgot Password?</a>
+                </div>
+            
+                <button type="submit" class="btn btn-primary mt-3">Sign In</button>
+            </form>
+            
+            
+            
+            
+            <h6 class="text-center mt-3">Or continue with</h6>
+<div class="social-icons">
+    <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-btn google"><i class="fab fa-google"></i></a>
+    <a href="#" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+</div>
+            
+            <p class="text-center mt-3">Not registered? <a href="register.html">Register</a></p>
+        </div>
+
+        <!-- Right Side: Image & Content -->
+        <div class="login-media">
+            <img src="https://imgs.search.brave.com/zo_dcddMOYQyeLfSGsQq398fBz-n5s0G2U7dDGp2BQ4/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzEwLzkzLzM4Lzcw/LzM2MF9GXzEwOTMz/ODcwOTZfc3pmN0hY/c2FTM0dwVVJMWWt0/Uk9EZkI1amJScExF/aVIuanBn" alt="CRM Dashboard">
+            <p class="crm-info">
+                REBIL Recruit –
+                <img src="data:image/png;base64,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"
+                 alt="AI Image" style="height: 40px; width: 40px; vertical-align: middle; margin-top: 5px;">
+                Powered Recruitment Management System
+            </p>
+            
+            
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const errorMessage = urlParams.get('error');
+            const successMessage = urlParams.get('success');
+    
+            if (errorMessage) {
+                alert(decodeURIComponent(errorMessage)); // Show error as an alert
+            }
+    
+            if (successMessage) {
+                alert(decodeURIComponent(successMessage)); // Show success message
+            }
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+
+</body>
+</html>
